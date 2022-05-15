@@ -1,0 +1,53 @@
+@import "variables";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $color-lm-very-light-grey;
+  font-family: "Nunito Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-size: 15px;
+  padding-top: 3px;
+
+  // @media only screen and (max-width: $bp-mobile) {
+  //   font-size: 13px;
+  //   padding-top: 1px;
+  // }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

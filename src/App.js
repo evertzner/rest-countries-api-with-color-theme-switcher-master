@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import CountriesContainer from "./components/countries-container/countries-container.component";
 
-function App() {
+import "./App.styles.scss";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="header">
+        <div className="header__title">Where in the world?</div>
+        <div className="header__dark-mode">
+          <span>
+            <ion-icon name="moon-outline"></ion-icon>
+          </span>
+          Dark Mode
+        </div>
+      </div>
+      <CountriesContainer />
     </div>
   );
-}
+};
 
 export default App;

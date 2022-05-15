@@ -1,0 +1,19 @@
+// Colors
+
+// Primary
+//Dark Blue (Dark Mode Elements)
+$color-dm-dark-blue: hsl(209, 23%, 22%);
+//Very Dark Blue (Dark Mode Background)
+$color-dm-very-dark-blue: hsl(207, 26%, 17%);
+//Very Dark Blue (Light Mode Text)
+$color-lm-very-dark-blue: hsl(200, 15%, 8%);
+//Dark Gray (Light Mode Input)
+$color-lm-dark-grey: hsl(0, 0%, 52%);
+//Very Light Gray (Light Mode Background)
+$color-lm-very-light-grey: hsl(0, 0%, 98%);
+//White (Dark Mode Text & Light Mode Elements)
+$color-white: hsl(0, 0%, 100%);
+
+// RESPONSIVE BREAKPOINTS
+$bp-mobile: 375px;
+$bp-desktop: 1440px;

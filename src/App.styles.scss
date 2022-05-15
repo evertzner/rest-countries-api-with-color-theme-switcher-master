@@ -1,0 +1,36 @@
+@import "./styles/variables";
+.app {
+  //padding: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background-color: $color-white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    overflow: hidden;
+    box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
+    -webkit-box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
+    &__title {
+      font-weight: 800;
+      font-size: 1.3rem;
+    }
+
+    &__dark-mode {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 800;
+      font-size: 1rem;
+
+      span {
+        line-height: 1;
+      }
+    }
+  }
+}
