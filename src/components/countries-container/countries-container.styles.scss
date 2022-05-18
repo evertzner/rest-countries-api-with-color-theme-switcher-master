@@ -1,7 +1,23 @@
 .countries-container {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   padding: 3rem;
   margin-top: 3rem;
+
+  &__countries {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
+
+    &--search-input {
+      grid-column: 1/2;
+    }
+
+    &--dropdown-filter {
+      grid-column: 2/3;
+      justify-self: end;
+    }
+
+    &--countries {
+      grid-column: 1/-1;
+    }
+  }
 }
