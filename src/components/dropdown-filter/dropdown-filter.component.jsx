@@ -1,13 +1,30 @@
+import { useState, useEffect } from "react";
+
 import "./dropdown-filter.styles.scss";
 
-const DropdownFilter = ({ filter, items, customClass }) => {
+const DropdownFilter = ({ filter, items, customClass, onChanged }) => {
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    const timeOutId = setTimeout(() => {
+      onChanged(query);
+    }, 500);
+    return () => clearTimeout(timeOutId);
+  }, [query]);
+
+  const onSearchChanged = (e) => {
+    console.log(e.target.value);
+    setQuery(e.target.value);
+    //onChanged(e.target.value);
+  };
+
   return (
     <div className={`dropdown-filter-container ${customClass}`}>
-      <select name={filter} defaultValue="">
-        <option value="" disabled hidden>
+      <select name={filter} defaultValue="" onChange={onSearchChanged}>
+        <option value="" hidden>
           Filter by {filter}
         </option>
-        <option value="all">All</option>
+        <option value="All">All</option>
         {items.map((x) => (
           <option key={x} value={x}>
             {x}

@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
-import { getCountries, getRegions } from "../../services/countries";
+import {
+  getCountries,
+  getRegions,
+  getCountry,
+  getRegion,
+} from "../../services/countries";
 
 import Countries from "../countries/countries.component";
 import LoaderSpinner from "../loader-spinner/loader-spinner.component";
@@ -25,6 +30,23 @@ const CountriesContainer = () => {
     getCountriesArray();
   }, []);
 
+  const onSearchChanged = (name) => {
+    const getCountryArray = async () => {
+      const countriesArray = await getCountry(name);
+      setCountries(countriesArray);
+    };
+    getCountryArray();
+  };
+
+  const onDropDownChanged = (region) => {
+    const getRegionArray = async () => {
+      const countriesArray = await getRegion(region);
+      setCountries(countriesArray);
+    };
+    getRegionArray();
+  };
+  console.log(countries);
+
   return (
     <div className="countries-container">
       {loading ? (
@@ -34,11 +56,13 @@ const CountriesContainer = () => {
           <SearchInput
             customClass="countries-container__countries--search-input"
             filter="country"
+            onChanged={onSearchChanged}
           />
           <DropdownFilter
             customClass="countries-container__countries--dropdown-filter"
             filter="region"
             items={regions}
+            onChanged={onDropDownChanged}
           />
           <Countries
             customClass="countries-container__countries--countries"

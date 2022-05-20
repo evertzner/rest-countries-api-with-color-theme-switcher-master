@@ -2,7 +2,7 @@ import "./loader-spinner.styles.scss";
 
 const LoaderSpinner = () => {
   return (
-    <div className="loader">
+    <div className="loader-spinner">
       <svg
         viewBox="0 0 120 120"
         version="1.1"
