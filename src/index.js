@@ -1,7 +1,9 @@
 import React from "react";
+import { Provider } from "react-redux";
 import { createRoot } from "react-dom/client";
 import "./index.scss";
 import App from "./App";
+import store from "./store/store";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -9,7 +11,9 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </>
 );
 

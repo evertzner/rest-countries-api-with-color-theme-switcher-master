@@ -1,25 +1,24 @@
-import { useState } from "react";
-import { getCountry } from "../../services/countries";
+import { useDispatch, useSelector } from "react-redux";
+import { countriesActions } from "../../store/countries-slice";
 
 import CountryCard from "../country-card/country-card.component";
+import Country from "../country/country.component";
 
 import "./countries.styles.scss";
 
 const Countries = ({ countries, customClass }) => {
-  const [country, setCountry] = useState([]);
+  const dispatch = useDispatch();
+  const country = useSelector((state) => state.countries.selectedCountry);
 
   const onSelectCountry = (name) => {
-    const getCountryArray = async () => {
-      const countryArray = await getCountry(name);
-      setCountry(countryArray);
-      console.log(countryArray);
-    };
-    getCountryArray();
+    dispatch(countriesActions.selectCountry(name));
   };
 
   return (
     <div className={`countries ${customClass}`}>
-      {countries.length > 0 ? (
+      {country ? (
+        <Country country={country} />
+      ) : countries.length > 0 ? (
         countries.map((c) => (
           <CountryCard
             country={c}

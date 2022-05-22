@@ -1,10 +1,6 @@
-import { useState, useEffect } from "react";
-import {
-  getCountries,
-  getRegions,
-  getCountry,
-  getRegion,
-} from "../../services/countries";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { countriesActions } from "../../store/countries-slice";
 
 import Countries from "../countries/countries.component";
 import LoaderSpinner from "../loader-spinner/loader-spinner.component";
@@ -14,38 +10,24 @@ import SearchInput from "../search-input/search-input.component";
 import "./countries-container.styles.scss";
 
 const CountriesContainer = () => {
-  const [countries, setCountries] = useState([]);
-  const [regions, setRegions] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+  const countries = useSelector((state) => state.countries.countries);
+  const regions = useSelector((state) => state.countries.regions);
+  const loading = useSelector((state) => state.ui.loading);
 
   useEffect(() => {
-    setLoading(true);
-    const getCountriesArray = async () => {
-      const countriesArray = await getCountries();
-      const regionsArray = await getRegions();
-      setLoading(false);
-      setCountries(countriesArray);
-      setRegions(regionsArray);
-    };
-    getCountriesArray();
+    dispatch(countriesActions.setCountries());
   }, []);
 
   const onSearchChanged = (name) => {
-    const getCountryArray = async () => {
-      const countriesArray = await getCountry(name);
-      setCountries(countriesArray);
-    };
-    getCountryArray();
+    dispatch(countriesActions.setSearchText(name));
+    dispatch(countriesActions.getCountry());
   };
 
   const onDropDownChanged = (region) => {
-    const getRegionArray = async () => {
-      const countriesArray = await getRegion(region);
-      setCountries(countriesArray);
-    };
-    getRegionArray();
+    dispatch(countriesActions.setDropdownSelected(region));
+    dispatch(countriesActions.getCountry());
   };
-  console.log(countries);
 
   return (
     <div className="countries-container">
