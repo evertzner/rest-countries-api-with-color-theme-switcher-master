@@ -1,31 +1,27 @@
 import { useEffect } from "react";
-
-import CountriesContainer from "./components/countries-container/countries-container.component";
-
-import "./App.styles.scss";
 import { useDispatch } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import Country from "./routes/country/country.component";
+import Home from "./routes/home/home.component";
+import Navigation from "./routes/navigation/navigation.component";
+
 import { fetchCountriesData } from "./store/countries-actions";
 
 const App = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchCountriesData());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(fetchCountriesData());
+  // }, []);
 
   return (
-    <div className="app">
-      <div className="header">
-        <div className="header__title">Where in the world?</div>
-        <div className="header__dark-mode">
-          <span>
-            <ion-icon name="moon-outline"></ion-icon>
-          </span>
-          Dark Mode
-        </div>
-      </div>
-      <CountriesContainer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="country/*" element={<Country />} />
+        {/* <Route path="country" element={<Country />} /> */}
+      </Route>
+    </Routes>
   );
 };
 

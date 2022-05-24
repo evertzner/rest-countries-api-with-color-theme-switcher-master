@@ -7,8 +7,8 @@ const uiSlice = createSlice({
     //notification: null,
   },
   reducers: {
-    load(state) {
-      state.loading = !state.loading;
+    load(state, action) {
+      state.loading = action.payload;
     },
     // showNotification(state, action) {
     //   const { status, title, message } = action.payload;

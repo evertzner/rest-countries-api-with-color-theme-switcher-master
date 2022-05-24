@@ -1,0 +1,44 @@
+.country-info {
+  padding: 3rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  font-size: 0.8rem;
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
+    align-items: center;
+
+    &--flag {
+      max-width: 40vw;
+    }
+
+    &__details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 50px repeat(4, 35px) 50px;
+      grid-auto-flow: column;
+      align-items: center;
+
+      & :first-child {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        align-self: start;
+      }
+
+      & :last-child {
+        grid-column: 1 / -1;
+        grid-row: 6 / 7;
+        align-self: end;
+      }
+
+      span {
+        font-weight: 800;
+        line-height: 2;
+      }
+    }
+  }
+}

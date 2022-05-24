@@ -11,7 +11,7 @@ const PAGE_URL = {
 
 export const fetchCountriesData = () => {
   return async (dispatch) => {
-    dispatch(uiActions.load());
+    dispatch(uiActions.load(true));
 
     const fetchData = async () => {
       const response = await axios.get(PAGE_URL.ALL);
@@ -31,12 +31,15 @@ export const fetchCountriesData = () => {
         })
       );
       dispatch(
+        countriesActions.setCountries({
+          countries: countriesData,
+        })
+      );
+      dispatch(
         countriesActions.setRegions({
           countries: countriesData,
         })
       );
-
-      dispatch(uiActions.load());
     } catch (error) {
       return error;
       // dispatch(
@@ -46,6 +49,8 @@ export const fetchCountriesData = () => {
       //     message: "Fetching cart data failed!",
       //   })
       // );
+    } finally {
+      await dispatch(uiActions.load(false));
     }
   };
 };
