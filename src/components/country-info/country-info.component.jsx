@@ -47,42 +47,60 @@ const CountryInfo = () => {
         />
         <div className="country-info__info__details">
           <h1 className="country-info__info__details--name">{name}</h1>
-          <div className="country-info__info__details--native-name">
-            <span>Native Name: </span>
-            {nativeName}
-          </div>
-          <div className="country-info__info__details--population">
-            <span>Population: </span>
-            {population}
-          </div>
-          <div className="country-info__info__details--region">
-            <span>Region: </span>
-            {region}
-          </div>
-          <div className="country-info__info__details--sub-region">
-            <span>Sub Region: </span>
-            {subregion}
-          </div>
-          <div className="country-info__info__details--capital">
-            <span>Capital: </span>
-            {capital}
-          </div>
-          <div className="country-info__info__details--top-level-domain">
-            <span>Top Level Domain: </span>
-            {topLevelDomain}
-          </div>
-          <div className="country-info__info__details--currencies">
-            <span>Currencies: </span>
-            {currencies[0].name}
-          </div>
-          <div className="country-info__info__details--languages">
-            <span>Languages: </span>
-            {languages[0].name}
-          </div>
-          <div className="country-info__info__details--border-countries">
-            <span>Border Countries: </span>
-            {borders[0]}
-          </div>
+          {nativeName && (
+            <div className="country-info__info__details--native-name">
+              <span>Native Name: </span>
+              {nativeName}
+            </div>
+          )}
+          {population && (
+            <div className="country-info__info__details--population">
+              <span>Population: </span>
+              {population}
+            </div>
+          )}
+          {region && (
+            <div className="country-info__info__details--region">
+              <span>Region: </span>
+              {region}
+            </div>
+          )}
+          {subregion && (
+            <div className="country-info__info__details--sub-region">
+              <span>Sub Region: </span>
+              {subregion}
+            </div>
+          )}
+          {capital && (
+            <div className="country-info__info__details--capital">
+              <span>Capital: </span>
+              {capital}
+            </div>
+          )}
+          {topLevelDomain && (
+            <div className="country-info__info__details--top-level-domain">
+              <span>Top Level Domain: </span>
+              {topLevelDomain}
+            </div>
+          )}
+          {currencies && (
+            <div className="country-info__info__details--currencies">
+              <span>Currencies: </span>
+              {currencies[0].name}
+            </div>
+          )}
+          {languages && (
+            <div className="country-info__info__details--languages">
+              <span>Languages: </span>
+              {languages[0].name}
+            </div>
+          )}
+          {borders && (
+            <div className="country-info__info__details--border-countries">
+              <span>Border Countries: </span>
+              {borders[0]}
+            </div>
+          )}
         </div>
       </div>
     </div>
