@@ -1,5 +1,7 @@
 @import "../../styles/variables";
 
+$box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
+
 .dropdown-filter-container {
   display: flex;
   justify-content: end;
@@ -8,8 +10,8 @@
   background-color: $color-white;
   overflow: hidden;
   border-radius: 5px;
-  box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
-  -webkit-box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
+  box-shadow: $box-shadow;
+  -webkit-box-shadow: $box-shadow;
   position: relative;
 
   select {

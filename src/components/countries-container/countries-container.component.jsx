@@ -8,7 +8,6 @@ import DropdownFilter from "../dropdown-filter/dropdown-filter.component";
 import SearchInput from "../search-input/search-input.component";
 
 import "./countries-container.styles.scss";
-import { fetchCountriesData } from "../../store/countries-actions";
 
 const CountriesContainer = () => {
   const dispatch = useDispatch();
@@ -17,7 +16,9 @@ const CountriesContainer = () => {
   const loading = useSelector((state) => state.ui.loading);
 
   useEffect(() => {
-    dispatch(fetchCountriesData());
+    dispatch(countriesActions.setCountries());
+    dispatch(countriesActions.setSearchText("name"));
+    dispatch(countriesActions.setDropdownSelected("All"));
   }, []);
 
   const onSearchChanged = (name) => {

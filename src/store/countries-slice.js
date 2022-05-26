@@ -6,7 +6,7 @@ const countriesSlice = createSlice({
     countriesAll: [],
     countries: [],
     regions: [],
-    selectedCountry: null,
+    selectedCountry: {},
     searchText: "",
     dropdownSelected: "All",
   },
@@ -56,6 +56,12 @@ const countriesSlice = createSlice({
       const [selectedCountry] = state.countriesAll.filter(
         (country) => country.name === action.payload
       );
+
+      selectedCountry.borderCountries =
+        selectedCountry.borders &&
+        state.countriesAll
+          .filter((c) => selectedCountry.borders.includes(c.alpha3Code))
+          .map((c) => c.name);
 
       state.selectedCountry = selectedCountry;
     },

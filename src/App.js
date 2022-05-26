@@ -8,11 +8,12 @@ import Navigation from "./routes/navigation/navigation.component";
 import { fetchCountriesData } from "./store/countries-actions";
 
 const App = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchCountriesData());
-  // }, []);
+  useEffect(() => {
+    dispatch(fetchCountriesData());
+    console.log("FETCHING DATA...");
+  }, []);
 
   return (
     <Routes>

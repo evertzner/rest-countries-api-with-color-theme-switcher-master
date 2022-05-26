@@ -1,5 +1,7 @@
 @import "../../styles/variables";
 
+$box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
+
 .search-input-container {
   display: flex;
   align-items: center;
@@ -7,8 +9,8 @@
   background-color: $color-white;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
-  -webkit-box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
+  box-shadow: $box-shadow;
+  -webkit-box-shadow: $box-shadow;
 
   span {
     padding: 0.7rem;
