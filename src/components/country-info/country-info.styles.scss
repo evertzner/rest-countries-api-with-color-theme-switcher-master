@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-$box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
+$box-shadow: 1px 1px 4px 0px rgba(var(--color-dm-very-dark-blue), 0.2);
 
 .country-info {
   padding: 3rem 0;
@@ -24,7 +24,7 @@ $box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
     gap: 0.5rem;
     line-height: 0;
     width: max-content;
-    background-color: $color-white;
+    background-color: var(--background-color);
     padding: 0.6rem 1.7rem;
     border-radius: 5px;
     box-shadow: $box-shadow;
@@ -37,7 +37,7 @@ $box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
     }
 
     &:hover {
-      background-color: rgba($color-dm-very-dark-blue, 0.1);
+      background-color: rgba(var(--color-dm-very-dark-blue), 0.1);
     }
   }
 
@@ -85,7 +85,7 @@ $box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
 
           &__border-country {
             min-width: 5rem;
-            background-color: $color-white;
+            background-color: var(--background-color);
             border-radius: 5px;
             padding: 0.1rem 0.4rem;
             box-shadow: $box-shadow;
@@ -97,7 +97,7 @@ $box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
             transition: background-color 0.1s linear;
 
             &:hover {
-              background-color: rgba($color-dm-very-dark-blue, 0.1);
+              background-color: rgba(var(--color-dm-very-dark-blue), 0.1);
             }
           }
         }

@@ -14,10 +14,11 @@ html {
 
 body {
   margin: 0;
-  background-color: $color-lm-very-light-grey;
+  background-color: var(--background-color-very);
   font-family: $font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--font-color);
 }
 
 p {

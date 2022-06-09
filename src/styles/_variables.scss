@@ -1,23 +1,37 @@
-// Colors
+:root {
+  // Colors
 
-// Primary
-//Dark Blue (Dark Mode Elements)
-$color-dm-dark-blue: hsl(209, 23%, 22%);
+  // Primary
+  //Dark Blue (Dark Mode Elements)
+  --color-dm-dark-blue: hsl(209, 23%, 22%);
 
-//Very Dark Blue (Dark Mode Background)
-$color-dm-very-dark-blue: hsl(207, 26%, 17%);
+  //Very Dark Blue (Dark Mode Background)
+  --color-dm-very-dark-blue: hsl(207, 26%, 17%);
 
-//Very Dark Blue (Light Mode Text)
-$color-lm-very-dark-blue: hsl(200, 15%, 8%);
+  //Very Dark Blue (Light Mode Text)
+  --color-lm-very-dark-blue: hsl(200, 15%, 8%);
 
-//Dark Gray (Light Mode Input)
-$color-lm-dark-grey: hsl(0, 0%, 52%);
+  //Dark Gray (Light Mode Input)
+  --color-lm-dark-grey: hsl(0, 0%, 52%);
 
-//Very Light Gray (Light Mode Background)
-$color-lm-very-light-grey: hsl(0, 0%, 98%);
+  //Very Light Gray (Light Mode Background)
+  --color-lm-very-light-grey: hsl(0, 0%, 98%);
 
-//White (Dark Mode Text & Light Mode Elements)
-$color-white: hsl(0, 0%, 100%);
+  //White (Dark Mode Text & Light Mode Elements)
+  --color-white: hsl(0, 0%, 100%);
+
+  --background-color: var(--color-white);
+  --background-color-very: var(--color-lm-very-light-grey);
+  --font-color: var(--color-lm-very-dark-blue);
+  --placeholder-font-color: var(--color-dm-dark-blue);
+}
+
+[data-theme="dark"] {
+  --background-color: var(--color-dm-dark-blue);
+  --background-color-very: var(--color-dm-very-dark-blue);
+  --font-color: var(--color-white);
+  --placeholder-font-color: var(--color-lm-very-light-grey);
+}
 
 // RESPONSIVE BREAKPOINTS
 $bp-mobile: 375px;

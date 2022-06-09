@@ -1,8 +1,8 @@
 @import "../../styles/variables";
 
-$color1: $color-dm-dark-blue;
-$color2: $color-dm-very-dark-blue;
-$color3: $color-lm-very-dark-blue;
+$color1: var(--color-dm-dark-blue);
+$color2: var(--color-dm-very-dark-blue);
+$color3: var(--color-lm-very-dark-blue);
 
 /**
 AUTHOR: Jon Marron

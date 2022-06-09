@@ -1,12 +1,12 @@
 @import "../../styles/variables";
 
-$box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
+$box-shadow: 1px 1px 4px 0px rgba(var(--color-dm-very-dark-blue), 0.2);
 
 .search-input-container {
   display: flex;
   align-items: center;
   width: fit-content;
-  background-color: $color-white;
+  background-color: var(--background-color);
   border-radius: 5px;
   overflow: hidden;
   box-shadow: $box-shadow;
@@ -24,12 +24,17 @@ $box-shadow: 1px 1px 4px 0px rgba($color-dm-very-dark-blue, 0.2);
   .search-input-field {
     border-width: 0;
     font-family: $font-family;
-    //font-weight: 600;
+    color: inherit;
+    background-color: var(--background-color);
     font-size: 1.5rem;
     padding: 0.7rem;
 
     &:focus-visible {
       outline: none;
+    }
+
+    &::placeholder {
+      color: var(--placeholder-font-color);
     }
   }
 }

@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-$box-shadow: 0px 0px 8px 0px rgba($color-dm-very-dark-blue, 0.2);
+$box-shadow: 0px 0px 8px 0px rgba(var(--color-dm-very-dark-blue), 0.2);
 
 .country-card {
   display: flex;
@@ -9,7 +9,7 @@ $box-shadow: 0px 0px 8px 0px rgba($color-dm-very-dark-blue, 0.2);
   //max-width: 14rem;
   aspect-ratio: 5/7;
   //justify-content: space-evenly;
-  background-color: $color-white;
+  background-color: var(--background-color);
   cursor: pointer;
   border-radius: 5px;
   overflow: hidden;
