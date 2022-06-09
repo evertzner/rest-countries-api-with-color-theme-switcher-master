@@ -4,7 +4,7 @@ const uiSlice = createSlice({
   name: "ui",
   initialState: {
     loading: false,
-    theme: "light",
+    theme: "",
     //notification: null,
   },
   reducers: {
@@ -13,6 +13,12 @@ const uiSlice = createSlice({
     },
     toggleTheme(state) {
       state.theme = state.theme === "light" ? "dark" : "light";
+    },
+    setInitialTheme(state) {
+      state.theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+      document.body.setAttribute("data-theme", state.theme);
     },
     // showNotification(state, action) {
     //   const { status, title, message } = action.payload;

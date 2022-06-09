@@ -11,6 +11,7 @@ const PAGE_URL = {
 
 export const fetchCountriesData = () => {
   return async (dispatch) => {
+    dispatch(uiActions.setInitialTheme());
     dispatch(uiActions.load(true));
 
     const fetchData = async () => {
@@ -51,6 +52,7 @@ export const fetchCountriesData = () => {
       // );
     } finally {
       await dispatch(uiActions.load(false));
+      await dispatch(uiActions.toggleTheme());
     }
   };
 };
