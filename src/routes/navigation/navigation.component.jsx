@@ -23,18 +23,26 @@ const Navigation = () => {
   return (
     <div className="navigation">
       <div className="header">
-        <div className="header__title" onClick={onTitleClickHandler}>
-          Where in the world?
-        </div>
-        <div className="header__dark-mode" onClick={onChangeThemeHandler}>
-          <span>
-            {theme === "light" ? (
-              <ion-icon name="sunny"></ion-icon>
-            ) : (
-              <ion-icon name="moon"></ion-icon>
-            )}
-          </span>
-          {theme === "light" ? "Light Mode" : "Dark Mode"}
+        <div className="header__container">
+          <div
+            className="header__container__title"
+            onClick={onTitleClickHandler}
+          >
+            Where in the world?
+          </div>
+          <div
+            className="header__container__dark-mode"
+            onClick={onChangeThemeHandler}
+          >
+            <span>
+              {theme === "light" ? (
+                <ion-icon name="sunny"></ion-icon>
+              ) : (
+                <ion-icon name="moon"></ion-icon>
+              )}
+            </span>
+            {theme === "light" ? "Light Mode" : "Dark Mode"}
+          </div>
         </div>
       </div>
       <Outlet />

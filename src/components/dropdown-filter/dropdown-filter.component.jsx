@@ -1,12 +1,12 @@
 import "./dropdown-filter.styles.scss";
 
-const DropdownFilter = ({ filter, items, customClass, onChanged }) => {
+const DropdownFilter = ({ filter, items, onChanged }) => {
   const onSearchChanged = (e) => {
     onChanged(e.target.value);
   };
 
   return (
-    <div className={`dropdown-filter-container ${customClass}`}>
+    <div className="dropdown-filter-container">
       <select name={filter} defaultValue="" onChange={onSearchChanged}>
         <option value="" hidden>
           Filter by {filter}

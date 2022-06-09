@@ -7,7 +7,7 @@ $box-shadow: 1px 1px 4px 0px rgba(var(--color-dm-very-dark-blue), 0.2);
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
   font-size: 0.8rem;
   width: 80vw;
   height: 80vh;
@@ -32,6 +32,10 @@ $box-shadow: 1px 1px 4px 0px rgba(var(--color-dm-very-dark-blue), 0.2);
     cursor: pointer;
     transition: background-color 0.1s linear;
 
+    @media only screen and (max-width: $bp-mobile) {
+      font-size: 0.9em;
+    }
+
     ion-icon {
       font-size: inherit;
     }
@@ -47,8 +51,23 @@ $box-shadow: 1px 1px 4px 0px rgba(var(--color-dm-very-dark-blue), 0.2);
     column-gap: 4rem;
     align-items: center;
 
+    @media only screen and (max-width: $bp-small) {
+      display: flex;
+    }
+
+    @media only screen and (max-width: $bp-mobile) {
+      flex-direction: column;
+      align-items: start;
+    }
+
     &--flag {
+      align-self: flex-start;
       max-width: 40vw;
+
+      @media only screen and (max-width: $bp-mobile) {
+        max-width: 80vw;
+        margin-bottom: 2rem;
+      }
     }
 
     &__details {
@@ -58,10 +77,27 @@ $box-shadow: 1px 1px 4px 0px rgba(var(--color-dm-very-dark-blue), 0.2);
       grid-auto-flow: row;
       align-items: start;
 
+      @media only screen and (max-width: $bp-small) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media only screen and (max-width: $bp-mobile) {
+        font-size: 0.9em;
+      }
+
       &--name {
         grid-column: 1 / -1;
         grid-row: 1 / 2;
         align-self: start;
+
+        @media only screen and (max-width: $bp-small) {
+          margin-bottom: 0.9rem;
+        }
+
+        @media only screen and (max-width: $bp-mobile) {
+          font-size: 1.7em;
+        }
       }
 
       &--border-countries {
@@ -69,9 +105,9 @@ $box-shadow: 1px 1px 4px 0px rgba(var(--color-dm-very-dark-blue), 0.2);
         grid-row: 6 / -1;
         align-self: center;
         margin-top: 1rem;
-        display: grid;
-        grid-template-columns: max-content 1fr;
-        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
 
         span {
           grid-column: 1 / 2;

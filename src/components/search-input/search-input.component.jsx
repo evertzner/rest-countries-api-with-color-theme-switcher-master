@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import "./search-input.styles.scss";
 
-const SearchInput = ({ filter, customClass, onChanged }) => {
+const SearchInput = ({ filter, onChanged }) => {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const SearchInput = ({ filter, customClass, onChanged }) => {
   };
 
   return (
-    <div className={`search-input-container ${customClass}`}>
+    <div className="search-input-container">
       <span>
         <ion-icon name="search-outline"></ion-icon>
       </span>

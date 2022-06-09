@@ -37,19 +37,16 @@ const CountriesContainer = () => {
         <LoaderSpinner />
       ) : (
         <div className="countries-container__countries">
-          <SearchInput
-            customClass="countries-container__countries--search-input"
-            filter="country"
-            onChanged={onSearchChanged}
-          />
-          <DropdownFilter
-            customClass="countries-container__countries--dropdown-filter"
-            filter="region"
-            items={regions}
-            onChanged={onDropDownChanged}
-          />
+          <div className="countries-container__countries__filters">
+            <SearchInput filter="country" onChanged={onSearchChanged} />
+            <DropdownFilter
+              filter="region"
+              items={regions}
+              onChanged={onDropDownChanged}
+            />
+          </div>
           <Countries
-            customClass="countries-container__countries--countries"
+            customClass="countries-container__countries__countries"
             countries={countries}
           />
         </div>
