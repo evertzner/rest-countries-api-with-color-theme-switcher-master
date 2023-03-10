@@ -1,17 +1,17 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { PersistGate } from "redux-persist/lib/integration/react";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/lib/integration/react';
 
-import App from "./App";
-import { store, persistor } from "./store/store";
+import App from './App';
+import { store, persistor } from './store/store';
 
-import "./index.scss";
+import './index.scss';
 
-import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from './reportWebVitals';
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
   <>

@@ -1,12 +1,10 @@
-import { useEffect } from "react";
+import { Outlet, useNavigate } from 'react-router-dom';
 
-import { Outlet, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
 
-import { useDispatch, useSelector } from "react-redux";
+import { uiActions } from '../../store/ui-slice';
 
-import { uiActions } from "../../store/ui-slice";
-
-import "./navigation.styles.scss";
+import './navigation.styles.scss';
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -15,12 +13,12 @@ const Navigation = () => {
   const theme = useSelector((state) => state.ui.theme);
 
   const onTitleClickHandler = () => {
-    navigate("/");
+    navigate('/');
   };
 
   const onChangeThemeHandler = () => {
     dispatch(uiActions.toggleTheme());
-    document.body.setAttribute("data-theme", theme);
+    document.body.setAttribute('data-theme', theme);
   };
 
   return (
@@ -28,25 +26,19 @@ const Navigation = () => {
       {loading || (
         <div className="header">
           <div className="header__container">
-            <div
-              className="header__container__title"
-              onClick={onTitleClickHandler}
-            >
+            <div className="header__container__title" onClick={onTitleClickHandler}>
               Where in the world?
             </div>
 
-            <div
-              className="header__container__dark-mode"
-              onClick={onChangeThemeHandler}
-            >
+            <div className="header__container__dark-mode" onClick={onChangeThemeHandler}>
               <span>
-                {theme === "light" ? (
+                {theme === 'light' ? (
                   <ion-icon name="sunny"></ion-icon>
                 ) : (
                   <ion-icon name="moon"></ion-icon>
                 )}
               </span>
-              {theme === "light" ? "Light Mode" : "Dark Mode"}
+              {theme === 'light' ? 'Light Mode' : 'Dark Mode'}
             </div>
           </div>
         </div>

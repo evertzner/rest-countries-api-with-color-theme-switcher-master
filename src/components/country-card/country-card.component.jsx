@@ -1,4 +1,4 @@
-import "./country-card.styles.scss";
+import './country-card.styles.scss';
 
 const CountryCard = ({ country, onClick }) => {
   const { flag, name, population, region, capital } = country;

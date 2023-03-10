@@ -1,14 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const countriesSlice = createSlice({
-  name: "countries",
+  name: 'countries',
   initialState: {
     countriesAll: [],
     countries: [],
     regions: [],
     selectedCountry: {},
-    searchText: "",
-    dropdownSelected: "All",
+    searchText: '',
+    dropdownSelected: 'All'
   },
   reducers: {
     setCountriesInitial(state, action) {
@@ -42,15 +42,9 @@ const countriesSlice = createSlice({
         .filter((country) =>
           country.region
             .toLowerCase()
-            .includes(
-              state.dropdownSelected === "All"
-                ? ""
-                : state.dropdownSelected.toLowerCase()
-            )
+            .includes(state.dropdownSelected === 'All' ? '' : state.dropdownSelected.toLowerCase())
         )
-        .filter((country) =>
-          country.name.toLowerCase().includes(state.searchText.toLowerCase())
-        );
+        .filter((country) => country.name.toLowerCase().includes(state.searchText.toLowerCase()));
     },
     selectCountry(state, action) {
       const [selectedCountry] = state.countriesAll.filter(
@@ -64,8 +58,8 @@ const countriesSlice = createSlice({
           .map((c) => c.name);
 
       state.selectedCountry = selectedCountry;
-    },
-  },
+    }
+  }
 });
 
 export const countriesActions = countriesSlice.actions;

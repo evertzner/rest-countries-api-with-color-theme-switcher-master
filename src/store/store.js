@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -7,20 +7,20 @@ import {
   PAUSE,
   PERSIST,
   PURGE,
-  REGISTER,
-} from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import countriesSlice from "./countries-slice";
-import uiSlice from "./ui-slice";
+  REGISTER
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import countriesSlice from './countries-slice';
+import uiSlice from './ui-slice';
 
 const persistConfig = {
-  key: "root",
-  storage,
+  key: 'root',
+  storage
 };
 
 const rootReducer = combineReducers({
   countries: countriesSlice.reducer,
-  ui: uiSlice.reducer,
+  ui: uiSlice.reducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -30,9 +30,9 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+      }
+    })
 });
 
 export const persistor = persistStore(store);

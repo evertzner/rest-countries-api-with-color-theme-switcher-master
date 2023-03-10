@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 :root {
   --color1: var(--color-dm-dark-blue);
@@ -6,7 +6,7 @@
   --color3: var(--color-lm-very-dark-blue);
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --color1: var(--color-white);
   --color2: var(--color-lm-very-light-grey);
   --color3: var(--color-lm-dark-grey);

@@ -1,16 +1,14 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import { countriesActions } from "../../store/countries-slice";
-import "./country-info.styles.scss";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import { countriesActions } from '../../store/countries-slice';
+import './country-info.styles.scss';
 
 const CountryInfo = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { country } = useParams();
-  const selectedCountry = useSelector(
-    (state) => state.countries.selectedCountry
-  );
+  const selectedCountry = useSelector((state) => state.countries.selectedCountry);
 
   useEffect(() => {
     dispatch(countriesActions.selectCountry(country));
@@ -29,11 +27,11 @@ const CountryInfo = () => {
     currencies, //name
     languages, //name
     borders,
-    borderCountries,
+    borderCountries
   } = selectedCountry || {};
 
   const onGoBackHandler = () => {
-    navigate("/");
+    navigate('/');
   };
 
   const onSelectBorderCountry = (e) => {
@@ -50,11 +48,7 @@ const CountryInfo = () => {
       </div>
       {selectedCountry ? (
         <div className="country-info__info">
-          <img
-            src={flag}
-            alt={`${name}-flag`}
-            className="country-info__info--flag"
-          />
+          <img src={flag} alt={`${name}-flag`} className="country-info__info--flag" />
           <div className="country-info__info__details">
             <h1 className="country-info__info__details--name">{name}</h1>
             {nativeName && (

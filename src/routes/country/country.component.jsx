@@ -1,6 +1,5 @@
-import { useSelector } from "react-redux";
-import { Routes, Route } from "react-router-dom";
-import CountryInfo from "../../components/country-info/country-info.component";
+import { Routes, Route } from 'react-router-dom';
+import CountryInfo from '../../components/country-info/country-info.component';
 
 const Country = () => {
   // const country = useSelector((state) => state.countries.selectedCountry);

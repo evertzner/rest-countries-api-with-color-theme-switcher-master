@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import "./search-input.styles.scss";
+import './search-input.styles.scss';
 
 const SearchInput = ({ filter, onChanged }) => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     const timeOutId = setTimeout(() => {

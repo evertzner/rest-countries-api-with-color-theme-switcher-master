@@ -1,4 +1,4 @@
-import "./dropdown-filter.styles.scss";
+import './dropdown-filter.styles.scss';
 
 const DropdownFilter = ({ filter, items, onChanged }) => {
   const onSearchChanged = (e) => {

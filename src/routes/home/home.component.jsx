@@ -1,4 +1,4 @@
-import CountriesContainer from "../../components/countries-container/countries-container.component";
+import CountriesContainer from '../../components/countries-container/countries-container.component';
 
 const Home = () => {
   return <CountriesContainer />;
