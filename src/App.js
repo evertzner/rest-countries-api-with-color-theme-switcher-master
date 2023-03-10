@@ -13,7 +13,6 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchCountriesData());
-    console.log('FETCHING DATA...');
   }, []);
 
   return (

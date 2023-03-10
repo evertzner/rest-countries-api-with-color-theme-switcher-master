@@ -12,7 +12,6 @@ const CountryInfo = () => {
 
   useEffect(() => {
     dispatch(countriesActions.selectCountry(country));
-    console.log(selectedCountry);
   }, [country]);
 
   const {
@@ -24,8 +23,8 @@ const CountryInfo = () => {
     subregion,
     capital,
     topLevelDomain,
-    currencies, //name
-    languages, //name
+    currencies,
+    languages,
     borders,
     borderCountries
   } = selectedCountry || {};
@@ -37,7 +36,6 @@ const CountryInfo = () => {
   const onSelectBorderCountry = (e) => {
     navigate(`/country/${e.target.dataset.name}`);
   };
-  //console.log(selectedCountry);
   return (
     <div className="country-info">
       <div className="country-info__go-back" onClick={onGoBackHandler}>

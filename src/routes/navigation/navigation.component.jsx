@@ -8,6 +8,7 @@ import './navigation.styles.scss';
 
 const Navigation = () => {
   const dispatch = useDispatch();
+
   const navigate = useNavigate();
   const loading = useSelector((state) => state.ui.loading);
   const theme = useSelector((state) => state.ui.theme);
